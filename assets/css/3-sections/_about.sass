@@ -1,0 +1,41 @@
+h3
+  @extend %small-bold
+  color: $accent-light
+  text-align: center
+  padding: 30px 0 30px
+
+.face-lockup
+  max-width: 745px
+  +display(flex)
+  margin: 0 auto
+  +align-items(center)
+  +justify-content(space-around)
+
+  [class^="face-"]
+    +size(200px)
+    border-radius: 50%
+    margin-bottom: 30px
+
+  .face-1
+    background: url(/assets/img/faces/face-1.jpg)
+  .face-2
+    background: url(/assets/img/faces/face-2.jpg)
+  .face-3
+    background: url(/assets/img/faces/face-3.jpg)
+
+@media screen and (max-width: 745px)
+  .face-lockup
+    text-align: center
+    display: block
+
+    div
+      display: inline-block
+      margin: 0 30px 30px 0
+
+.blurb
+  max-width: 620px
+  padding: 0 20px
+  margin: 0 auto 60px
+  font-size: 24px
+  text-align: center
+  font-weight: 300s
