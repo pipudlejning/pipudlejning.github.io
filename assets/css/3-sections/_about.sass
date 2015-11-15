@@ -10,11 +10,7 @@ h3
   margin: 0 auto
   +align-items(center)
   +justify-content(space-around)
-
-  [class^="face-"]
-    +size(200px)
-    border-radius: 50%
-    margin-bottom: 30px
+  +clearfix()
 
   .face-1
     background: url(/assets/img/faces/face-1.jpg)
@@ -22,6 +18,39 @@ h3
     background: url(/assets/img/faces/face-2.jpg)
   .face-3
     background: url(/assets/img/faces/face-3.jpg)
+
+  [class^="face-"]
+    +size(200px)
+    background:
+      position: center center
+      repeat: no-repeat
+      size: cover
+    border-radius: 50%
+    margin-bottom: 30px
+    display: block
+    position: relative
+    overflow: hidden
+    
+    .face-overlay
+      +position(absolute, 100% 0px null 0px)
+      height: 100%
+      border-radius: 0%
+      background: fade-out($accent, 0.1)
+      text-align: center
+      padding-top: 10px
+      +transition()
+
+      strong
+        display: block
+        padding: 0px 20px
+        color: white
+        font-weight: 300
+        text-transform: uppercase
+        font-size: 24px
+        line-height: 1.2
+
+    &:hover .face-overlay
+      +position(absolute, 70% 0px null 0px)
 
 @media screen and (max-width: 745px)
   .face-lockup
